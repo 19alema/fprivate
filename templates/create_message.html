@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<main class="create-msg">
+    <section class="form">
+        <h1>
+            Enter Messages For Memebers....
+        </h1>
+
+        <form action="/message" method="post" class="msg-form">
+            <div class="msg">
+                <label for="Title">
+                    Title
+                </label>
+                <input type="text" placeholder="Message Title" name="title" id="title">
+            </div>
+            <div class="msg">
+                <label for="Title">
+                    Message
+                </label>
+                 <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit">Create</button>
+        </form>
+    </section>
+</main>
+
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%block content%}
+<div class="admin">
+    <form action="/admin" method="post">
+        <div class="input-field">
+            <label for="Name">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+        </div>
+    </form>
+</div>
+{%endblock%}

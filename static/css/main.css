@@ -1,0 +1,386 @@
+/* Generic font to be used */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+
+/* CSS RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: #2c354a;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  :root {
+    --pry-color: #2c354a;
+    --sec-color:#303a52;
+    --contrast:#ffcc00;
+  }
+  a {
+    text-decoration: none;
+  }
+
+
+  /* FORM HTML */
+  .sign_up {
+    display: grid;
+    /* place-content: center; */
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    color:#FFF;
+    background-color:var(--sec-color);
+    margin-bottom: 2em;
+    position: sticky;
+    top: 0;
+  
+  }
+
+  nav {
+    display: flex;
+  }
+  nav li {
+    margin-left: 1em;
+  }
+  nav li a {
+    color: #fff;
+  }
+
+  .left {
+    background-image: url("https://images.unsplash.com/photo-1495001258031-d1b407bc1776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2em;
+
+   
+    background-color: #303a52;
+    /* padding: 2em; */
+    color:#fff;
+    border-radius: 1em;
+    width: 100%;
+    /* padding: 2em; */
+  }
+
+  .admin {
+   max-width: 600px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 2em;
+   color: #fff;
+  }
+  .del_btn a{
+    color: crimson;
+    display: block;
+    text-align: left;
+    position: relative;
+    bottom: -20px;
+    font-size: 1.2em;
+  }
+  
+
+  .admin footer {
+    position: fixed;
+  }
+
+
+
+  input {
+    width: 100%;
+    padding:  .8em;
+    border-radius: .5em;
+    outline: none;
+  }
+
+  label {
+    font-size: 1.5em;
+  }
+
+  button {
+    padding:  .5em;
+    color:var(--pry-color);
+    font-size: 1.2em;
+    background-color: #ffcc00;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: var(--contrast);
+    margin: 1em 0;
+  }
+
+  .right h1 {
+    padding : 1em 0;
+    font-size:2.5em;
+    font-weight: bold;
+  }
+  .right {
+    padding: 2em;
+  }
+
+  .form-head {
+    padding: .7em 0;
+  }
+  .form-head h3 {
+    padding-bottom:  1em;
+    font-size: 1.5em;
+  }
+
+  .input-field {
+    margin: .5em 0;
+  }
+
+  .btn {
+    color:var(--contrast)
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo i {
+    margin-left: .5em;
+    font-size: 2em;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    padding: 1.5em;
+    background: var(--sec-color);
+    /* color: white; */
+    width: 100%;
+    color: var(--contrast);
+    text-align: left;
+  }
+
+  footer i {
+    font-size: 2em;
+  }
+  .user {
+    font-weight: 800;
+    font-size: 1.2em;
+    margin-left: .5em;
+
+  }
+
+  .create-msg {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    place-content: center;
+    padding: 0 20px;
+  }
+
+  .create-msg h1 {
+    font-size: 2.3em;
+  }
+
+   .create-msg .form {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    color: #fff;
+    background: var(--sec-color);
+    padding: 2em;
+   }
+
+   .msg label {
+    margin: 1em 0;
+  
+    display: inline-block;
+   }
+   textarea {
+    width: 100%;
+    padding: .8em;
+    border-radius: .5em;
+    outline: none;
+   }
+
+   .message_container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--sec-color);
+    padding: 2em;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+   }
+   .message {
+    background: var(--pry-color);
+    padding: .9em;
+    border-radius: 1em;
+    margin: .6em 0;
+    text-align: center;
+    font-size: 1em;
+   }
+
+   .title {
+    font-size: 1.5em;
+    border-bottom: 4px solid var(--contrast);
+   }
+
+   .author {
+    text-align: right;
+    color: var(--contrast);
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1em;
+   }
+
+@media (max-width: 1000px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 700px) {
+  .message_container {
+    grid-template-columns:1fr;
+    padding: 1em;
+   }
+   nav {
+    display: block;
+    text-align: left;
+   
+   }
+   .nav ul li a{
+    font-size: .5em;
+   }
+   header {
+    position: unset;
+    justify-content: flex-start;
+    padding: .5em;
+    text-align: left;
+   }
+
+   
+  .right h1 {
+    padding : .5em 0;
+    font-size:2em;
+    font-weight: bold;
+  }
+  .right {
+    padding: 2em;
+  }
+
+  .form-head {
+    padding: .5em 0;
+  }
+  .form-head h3 {
+    padding-bottom:  .5em;
+    font-size: 1.2em;
+  }
+
+  .input-field {
+    margin: .5em 0;
+  }
+
+  .btn {
+    color:var(--contrast)
+  }
+  input {
+    padding: .2em .5em;
+  }
+  label {
+    font-size: 2em;
+    font-weight: 900
+  }
+  
+  .right h1 {
+    padding : 1em 0;
+    font-size:1.5em;
+    font-weight: bold;
+  }
+  .right {
+    padding: 1em;
+  }
+
+  .form-head {
+    padding: 0;
+  }
+
+  .form-head p {
+    font-size: .8em;
+    padding: 0;
+    margin: 0;
+  }
+  .form-head h3 {
+    padding:  0em;
+    margin: 0;
+    font-size: 1.2em;
+    display: none;
+  }
+  button{
+  padding:  .2em;
+  font-size: .7em;
+  margin: .8em 0;
+}
+  .input-field {
+    margin: .5em 0;
+    font-size: .5em;
+  }
+
+  .sign_up {
+    padding: 1em;
+  }
+form .right p {
+  font-size: .1em;
+}
+  
+}

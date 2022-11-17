@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Only</title>
+
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+</head>
+<body>
+    <section>
+    <header>
+       <div class="logo">
+            <h2>Members Only</h2>
+            <i class="fa fa-user-secret" aria-hidden="true"></i>
+       </div>
+        <nav>
+            <li>
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <a href="/"> Home</a>
+            </li>
+            {% if not current_user.is_authenticated %}
+            <li>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <a href="/login"> Login</a>
+            </li>
+            <li>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <a href="/signup"> Sign Up</a>
+            </li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <li>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <a href="/logout"> Logout</a>
+            </li>
+           
+            <li>
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <a href="/message"> Create Message</a>
+            </li>
+            {%endif%}
+        </nav>
+    </header>
+    
+    <div class="hero-body">
+        <div class="container has-text-centered">
+           {% block content %}
+
+           <div class="message_container">
+            {%for message in data%}
+            <div class="message">
+                <h3 class="title">{{message.title}}</h3>
+                <p class="message">{{message.text}}</p>
+
+                <div class="del_btn">
+                {%if current_user.is_authenticated%}
+                    {% if request.args.get(isAdmin) != False%}
+                        <a href="/messages/{{message.id}}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    {%endif%}
+                        <h2 class="author"><i class="fa fa-user" aria-hidden="true"></i> {{message.author}} </h2>
+                    {%endif%}
+                </div>
+            </div>
+
+           {%endfor%}
+           </div>
+
+           {% endblock %}
+        </div>
+    </div>
+
+    </section>
+    
+
+    {% if current_user.is_authenticated%}
+    <footer>
+        
+         <span class="user">Welcome @{{current_user.username}}</span>
+    </footer>
+    {%endif%}
+</body>
+</html>
